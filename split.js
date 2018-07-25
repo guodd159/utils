@@ -66,22 +66,22 @@ function writefile(willWriteFile, writeArray) {
 // var newArray=array1.replace(/,/g,'\n')
 
 
-var arrayData = fs.readFileSync('tel531.txt').toString().split(/\s+/g);
-var arrayData1 = fs.readFileSync('tels04271718_02.txt').toString().split(/\s+/g);
+// var arrayData = fs.readFileSync('uid0707.txt').toString().split(',');
+var arrayData1 = fs.readFileSync('uid0707.txt').toString().split(/\s+/g);
 
-arrayData = arrayData.filter(item => {
-    return arrayData1.indexOf(item) < 0
-})
+// arrayData = arrayData.filter(item => {
+//     return arrayData1.indexOf(item) < 0
+// })
 // // // var newArrayData = arrayData.filter(function (item) {
 // // //     return item.indexOf("E+") < 0
 // // // })
-// var newArrayData = Array.from(new Set(arrayData1))
+let newArrayData = Array.from(new Set(arrayData1)).sort()
 // newArrayData = newArrayData.sort()
 // writefile('blackandinvalid1.txt', newArrayData)
-arrayData = arrayData.join(",").replace(/,/g, '\n')
-console.log(arrayData)
+// newArrayData = newArrayData.join(",")
+// console.log(newArrayData)
 // var new_trshequ1 = fs.readFileSync('blackandinvalid1.txt').toString().replace(/,/g, ',\n')
-writefile('tel531_01.txt', arrayData)
+writefile('uid_07.txt', newArrayData)
 
 // console.log(new_trshequ1, new_trshequ1.length)
 
